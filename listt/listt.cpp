@@ -23,7 +23,7 @@ class LinkedList {
 public:
     LinkedList() : head{ nullptr }, tail{ nullptr }, size{ 0 } {}
 
-    // Add to end
+    
     void add_before(T value) {
         Node<T>* newNode = new Node<T>(value);
 
@@ -39,7 +39,7 @@ public:
         size++;
     }
 
-    // Add to beginning
+    
     void add_after(T value) {
         Node<T>* newNode = new Node<T>(value);
 
@@ -77,7 +77,7 @@ public:
         cout << endl;
     }
 
-    // Search element
+    
     bool linear_search(T value) {
         Node<T>* current = head;
 
@@ -91,13 +91,13 @@ public:
         return false;
     }
 
-    // Reverse linked list
+    
     void reverse_before() {
         Node<T>* current = head;
         Node<T>* temp = nullptr;
 
         while (current != nullptr) {
-            // swap next and previous
+            
             temp = current->previous;
             current->previous = current->next;
             current->next = temp;
@@ -105,13 +105,13 @@ public:
             current = current->previous;
         }
 
-        // swap head and tail
+       
         temp = head;
         head = tail;
         tail = temp;
     }
 
-    // Bubble sort
+    
     void bubble_sort() {
         if (head == nullptr)
             return;
@@ -135,7 +135,7 @@ public:
         } while (swapped);
     }
 
-    // Shift list left by count
+    
     void shift_before(int count) {
         if (head == nullptr || count <= 0)
             return;
